@@ -1,11 +1,25 @@
 package io.github.coalangsoft.ifw.wrap.javafx;
 
-import io.github.coalangsoft.data.Func;
+import io.github.coalangsoft.lib.data.Func;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class IfwApplication extends Application {
 
+	public IfwApplication(){}
+	
+	public IfwApplication(IApplication app){
+		setup(app);
+	}
+	
+	public IfwApplication(Func<Stage, Void> start){
+		setup(start);
+	}
+	
+	public static void launch(String... args){
+		launch(IfwApplication.class, args);
+	}
+	
 	private static IApplication application;
 	
 	public static void setup(IApplication app){

@@ -1,6 +1,6 @@
 package io.github.coalangsoft.ifw.wrap.javafx;
 
-import io.github.coalangsoft.data.Func;
+import io.github.coalangsoft.lib.data.Func;
 import javafx.animation.AnimationTimer;
 
 public class IfwAnimationTimer extends AnimationTimer {
