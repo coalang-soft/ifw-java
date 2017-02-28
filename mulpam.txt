@@ -1,1 +1,4 @@
 github coalang-soft coalib-java
+dir-create ./ifw-java/standalone-src
+dir-copy ./ifw-java/src ./ifw-java/standalone-src
+dir-copy ./coalib-java/src ./ifw-java/standalone-src
