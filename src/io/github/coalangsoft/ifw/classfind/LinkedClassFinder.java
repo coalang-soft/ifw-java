@@ -2,7 +2,7 @@ package io.github.coalangsoft.ifw.classfind;
 
 import java.util.ArrayList;
 
-import io.github.coalangsoft.ifw.use.CustomClassFinder;
+import io.github.coalangsoft.lib.reflect.CustomClassFinder;
 
 public class LinkedClassFinder implements CustomClassFinder{
 
@@ -21,7 +21,7 @@ public class LinkedClassFinder implements CustomClassFinder{
 		for(int i = 0; i < parts.size(); i++){
 			try{
 				return parts.get(i).find(name);
-			}catch(ClassNotFoundException e){}
+			}catch(Exception e){}
 		}
 		throw new ClassNotFoundException(name);
 	}

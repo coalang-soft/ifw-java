@@ -1,6 +1,6 @@
 package io.github.coalangsoft.ifw.classfind;
 
-import io.github.coalangsoft.ifw.use.CustomClassFinder;
+import io.github.coalangsoft.lib.reflect.CustomClassFinder;
 
 public class DefaultClassFinder implements CustomClassFinder {
 

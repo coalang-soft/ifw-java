@@ -1,6 +1,7 @@
 package io.github.coalangsoft.ifw.use;
 
 import io.github.coalangsoft.ifw.classfind.DefaultClassFinder;
+import io.github.coalangsoft.lib.reflect.CustomClassFinder;
 
 import java.lang.reflect.Modifier;
 import java.util.Properties;
