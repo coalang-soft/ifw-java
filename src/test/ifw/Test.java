@@ -1,21 +1,31 @@
 package test.ifw;
 
-import javafx.stage.Stage;
-import io.github.coalangsoft.ifw.use.InterfaceWorld;
-import io.github.coalangsoft.ifw.wrap.javafx.IfwApplication;
-import io.github.coalangsoft.lib.data.Func;
+import io.github.coalangsoft.ifw.use.InterfaceWrapper;
+import io.github.coalangsoft.ifw.use.Javac;
+import io.github.coalangsoft.ifw.use.JavacResult;
+import io.github.coalangsoft.lib.data.Pair;
+
+import java.io.File;
+import java.util.ArrayList;
 
 public class Test {
-	
+
+	public interface Out {
+		void write(int i);
+	}
+
 	public static void main(String[] args) {
-		new IfwApplication(new Func<Stage, Void>() {
-			
-			@Override
-			public Void call(Stage p) {
-				p.show();
-				return null;
-			}
-		}).launch(args);
+		Out o = InterfaceWrapper.wrap(Out.class, System.out);
+		o.write(65);
+		System.out.println();
+
+		Javac javac = Javac.getInstance();
+
+		ArrayList<File> files = new ArrayList<File>();
+		files.add(new File("DemoClass.java"));
+
+		JavacResult result = javac.compile(files);
+		result.makeException();
 	}
 	
 }
