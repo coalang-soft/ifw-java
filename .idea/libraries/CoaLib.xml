@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="CoaLib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../CoaLib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../CoaLib/src" />
+    </SOURCES>
+  </library>
+</component>
