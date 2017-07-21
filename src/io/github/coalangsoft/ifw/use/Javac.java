@@ -1,7 +1,7 @@
 package io.github.coalangsoft.ifw.use;
 
 import io.github.coalangsoft.lib.data.Func;
-import io.github.coalangsoft.lib.data.ImutablePair;
+import io.github.coalangsoft.lib.data.ImmutablePair;
 import io.github.coalangsoft.lib.data.Pair;
 
 import java.io.File;

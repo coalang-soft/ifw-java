@@ -1,6 +1,6 @@
 package io.github.coalangsoft.ifw.use;
 
-import io.github.coalangsoft.lib.data.ImutablePair;
+import io.github.coalangsoft.lib.data.ImmutablePair;
 import io.github.coalangsoft.lib.data.Pair;
 
 /**
@@ -25,7 +25,7 @@ public class JavacResult {
     }
 
     public Pair<String, Boolean> toPair() {
-        return new ImutablePair<String, Boolean>(out, success);
+        return new ImmutablePair<String, Boolean>(out, success);
     }
 
     public void makeException() throws RuntimeException {
