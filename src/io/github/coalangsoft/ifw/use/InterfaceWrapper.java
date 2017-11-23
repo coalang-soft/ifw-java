@@ -1,5 +1,7 @@
 package io.github.coalangsoft.ifw.use;
 
+import io.github.coalangsoft.lib.data.Func;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -36,6 +38,19 @@ public class InterfaceWrapper {
                 return baseClass.getMethod(method.getName(), method.getParameterTypes()).invoke(base, (Object[]) args);
             }
         });
+    }
+
+    public static Object wrap(Class[] interfaces, Func<Method,Func<Object[],Object>> methodResolver){
+        return Proxy.newProxyInstance(interfaces[0].getClassLoader(), interfaces, new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                return methodResolver.call(method).call(args);
+            }
+        });
+    }
+
+    public static <T> T wrap(Class<T> interfaceClass, Func<Method,Func<Object[],Object>> methodResolver){
+        return (T) wrap(new Class[]{interfaceClass}, methodResolver);
     }
 
 }
